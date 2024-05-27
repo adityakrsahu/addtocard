@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Card List</h1>
+        <div style="float: right; margin-top: -60px;">
+            <a href="{% url 'add_card' %}" class="btn btn-primary">Add a New Card</a>
+        </div>
+        <div class="row">
+            {% for card in cards %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src=" {{card.image.url}}" height="250px" class="card-img-top" alt="{{ card.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ card.title }}</h5>
+                        <h5 class="card-title">{{ card.rs }}</h5>
+                        <p class="card-text">{{ card.des }}</p>
+                        <a href="{% url 'addtocard' card.pk %}"><button type="submit" class="btn btn-success">Add Card</button></a>  <!-- Updated this line -->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

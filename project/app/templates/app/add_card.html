@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Card</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Add a New Card</h1>
+        <form method="post" enctype="multipart/form-data" class="mb-4">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.title.label_tag }}
+                {{ form.title }}
+            </div>
+            <div class="form-group">
+                {{ form.rs.label_tag }}
+                {{ form.rs }}
+            </div>
+            <div class="form-group">
+                {{ form.des.label_tag }}
+                {{ form.des }}
+            </div>
+            <div class="form-group">
+                {{ form.image.label_tag }}
+                {{ form.image }}
+            </div>
+            <button type="submit" class="btn btn-success">Add Card</button>
+        </form>
+        <a href="{% url 'card_list' %}" class="btn btn-secondary">Back to Card List</a>
+    </div>
+</body>
+</html>
