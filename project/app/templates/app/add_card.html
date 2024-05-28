@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,7 @@
 <body>
     <div class="container">
         <h1 class="my-4">Add a New Card</h1>
-        <form method="post" enctype="multipart/form-data" class="mb-4">
+        <form method="post" enctype="multipart/form-data" action="{% url 'add_card' %}" class="mb-4">
             {% csrf_token %}
             <div class="form-group">
                 {{ form.title.label_tag }}
@@ -30,7 +29,9 @@
             </div>
             <button type="submit" class="btn btn-success">Add Card</button>
         </form>
-        <a href="{% url 'card_list' %}" class="btn btn-secondary">Back to Card List</a>
+        <div style="float: right;">
+            <a href="{% url 'card_list' %}" class="btn btn-secondary">Card List</a>
+        </div>
     </div>
 </body>
 </html>
