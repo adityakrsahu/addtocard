@@ -21,6 +21,7 @@
                         <h5 class="card-title">{{ card.title }}</h5>
                         <h5 class="card-title">{{ card.rs }}</h5>
                         <p class="card-text">{{ card.des }}</p>
+                        Quantity:<input type="number" name="quantity" value="1">
                         <a href="{% url 'addtocard' card.pk %}">
                             <button type="button" class="btn btn-success">Add Card</button>
                         </a>

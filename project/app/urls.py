@@ -5,7 +5,7 @@ from .views import add_card, card_list, addtocard
 
 urlpatterns = [
     path('', add_card, name='add_card'),
-    path('card/', card_list, name='card_list'),
+    path('card/',card_list, name='card_list'),
     path("addtocard/<int:pk>", addtocard, name='addtocard'),
 ]
 
