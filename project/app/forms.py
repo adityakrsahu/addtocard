@@ -5,3 +5,4 @@ class ItemInfoForm(forms.ModelForm):
     class Meta:
         model = Card
         fields = ['title', 'rs', 'des', 'image']
+        
