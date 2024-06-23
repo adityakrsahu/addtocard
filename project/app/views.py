@@ -37,3 +37,5 @@ def addtocard(request, pk):
         return render(request,'app/card_list.html',{'form':form,'data':data,'media_url': settings.MEDIA_URL})
     return redirect('app/card_list.html')
     
+
+# def 
